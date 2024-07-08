@@ -1,0 +1,87 @@
+{
+  "name": "package-name",
+  "version": "0.1.0",
+  "author": {
+    "name": "Author Name",
+    "email": "author@email.com",
+    "url": "https://website.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/repository.git"
+  },
+  "main": "./dist/package-name.cjs",
+  "module": "./dist/package-name.mjs",
+  "devDependencies": {
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20.11.5",
+    "@vitest/coverage-v8": "^1.2.1",
+    "dts-bundle-generator": "^9.2.4",
+    "jsdom": "^24.1.0",
+    "lint-staged": "^15.2.0",
+    "np": "^10.0.6",
+    "prettier": "^3.2.4",
+    "terser": "^5.31.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "upgradeps": "^2.0.6",
+    "vite": "^5.0.12",
+    "vitest": "^1.2.1"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/package-name.cjs",
+      "import": "./dist/package-name.mjs",
+      "types": "./dist/package-name.d.ts"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/",
+      "types": "./dist/"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/username/repository/issues"
+  },
+  "description": "Package description.",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md",
+    "CHANGELOG.md",
+    "src",
+    "package.json"
+  ],
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://support.example.com"
+    }
+  ],
+  "homepage": "https://github.com/username/repository#readme",
+  "keywords": ["some", "keywords"],
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "vite --host",
+    "build": "rm -rf dist/* && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "format": "prettier . --write",
+    "upgrade": "upgradeps",
+    "release": "npm run build && np"
+  },
+  "sponsor": {
+    "url": "https://sponsor.example.com"
+  },
+  "type": "module",
+  "types": "./dist/package-name.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/package-name.d.ts"
+      ]
+    }
+  },
+  "typings": "./dist/package-name.d.ts"
+}
