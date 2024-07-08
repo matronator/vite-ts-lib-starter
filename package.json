@@ -12,22 +12,6 @@
   },
   "main": "./dist/package-name.cjs",
   "module": "./dist/package-name.mjs",
-  "devDependencies": {
-    "@types/jsdom": "^21.1.6",
-    "@types/node": "^20.11.5",
-    "@vitest/coverage-v8": "^1.2.1",
-    "dts-bundle-generator": "^9.2.4",
-    "jsdom": "^24.1.0",
-    "lint-staged": "^15.2.0",
-    "np": "^10.0.6",
-    "prettier": "^3.2.4",
-    "terser": "^5.31.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
-    "upgradeps": "^2.0.6",
-    "vite": "^5.0.12",
-    "vitest": "^1.2.1"
-  },
   "exports": {
     ".": {
       "require": "./dist/package-name.cjs",
@@ -39,6 +23,17 @@
       "require": "./dist/",
       "types": "./dist/"
     }
+  },
+  "scripts": {
+    "dev": "vite --host",
+    "prebuild": "rm -rf dist/*",
+    "build": "tsc && vite build",
+    "postbuild": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "format": "prettier . --write",
+    "upgrade": "upgradeps",
+    "release": "npm run build && np"
   },
   "bugs": {
     "url": "https://github.com/username/repository/issues"
@@ -62,15 +57,6 @@
   "keywords": ["some", "keywords"],
   "license": "MIT",
   "private": false,
-  "scripts": {
-    "dev": "vite --host",
-    "build": "rm -rf dist/* && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
-    "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "format": "prettier . --write",
-    "upgrade": "upgradeps",
-    "release": "npm run build && np"
-  },
   "sponsor": {
     "url": "https://sponsor.example.com"
   },
@@ -83,5 +69,21 @@
       ]
     }
   },
-  "typings": "./dist/package-name.d.ts"
+  "typings": "./dist/package-name.d.ts",
+  "devDependencies": {
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20.11.5",
+    "@vitest/coverage-v8": "^1.2.1",
+    "dts-bundle-generator": "^9.2.4",
+    "jsdom": "^24.1.0",
+    "lint-staged": "^15.2.0",
+    "np": "^10.0.6",
+    "prettier": "^3.2.4",
+    "terser": "^5.31.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "upgradeps": "^2.0.6",
+    "vite": "^5.0.12",
+    "vitest": "^1.2.1"
+  }
 }
