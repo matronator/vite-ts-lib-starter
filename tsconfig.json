@@ -22,8 +22,7 @@
         "types": ["vite/client", "node"],
         "declaration": true,
         "declarationDir": "dist",
-        "listEmittedFiles": true,
-        "declarationMap": true
+        "listEmittedFiles": true
     },
     "include": ["src", "dist/index.d.ts"],
     "exclude": ["**/*.test.ts", "node_modules", "test/**", ".history/**"]

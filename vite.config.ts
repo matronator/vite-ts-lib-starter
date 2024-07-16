@@ -16,7 +16,7 @@ const getPackageNameCamelCase = () => {
 };
 
 const fileName = {
-    es: `${getPackageName()}.mjs`,
+    es: `${getPackageName()}.esm.js`,
     cjs: `${getPackageName()}.cjs`,
     iife: `${getPackageName()}.iife.js`,
 };
@@ -27,7 +27,6 @@ export default defineConfig({
     base: "./",
     build: {
         outDir: "./dist",
-        sourcemap: true,
         lib: {
             entry: path.resolve(__dirname, "src/index.ts"),
             name: getPackageNameCamelCase(),
@@ -38,7 +37,6 @@ export default defineConfig({
         terserOptions: {
             keep_classnames: true,
             keep_fnames: true,
-            sourceMap: true,
         }
     },
     test: {

@@ -11,12 +11,12 @@
     "url": "git+https://github.com/username/repository.git"
   },
   "main": "./dist/package-name.cjs",
-  "module": "./dist/package-name.mjs",
-  "browser": "./dist/package-name.iife.js",
+  "module": "./dist/package-name.esm.js",
+  "jsdelivr": "./dist/package-name.iife.js",
   "exports": {
     ".": {
       "require": "./dist/package-name.cjs",
-      "import": "./dist/package-name.mjs",
+      "import": "./dist/package-name.esm.js",
       "types": "./dist/package-name.d.ts"
     },
     "./dist/": {
