@@ -12,6 +12,7 @@
   },
   "main": "./dist/package-name.cjs",
   "module": "./dist/package-name.mjs",
+  "browser": "./dist/package-name.iife.js",
   "exports": {
     ".": {
       "require": "./dist/package-name.cjs",
